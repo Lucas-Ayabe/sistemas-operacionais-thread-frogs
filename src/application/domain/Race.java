@@ -4,7 +4,7 @@ import application.contracts.Observer;
 
 public class Race implements Observer<FrogRun> {
 
-    private int winner = 0;
+    private int position = 0;
 
     public Race(Frog[] frogs, int finalLength) {
         for (int i = 0; i < frogs.length; i++) {
@@ -16,12 +16,9 @@ public class Race implements Observer<FrogRun> {
 
     @Override
     public void observe(FrogRun subject) {
-        if (subject.isFinished()) {
-            winner++;
-
-            System.out.println(
-                subject.frog() + " venceu em " + winner + "° lugar"
-            );
-        }
+        System.out.println(
+            subject.frog() + " chegou em " + (position + 1) + "° lugar\n"
+        );
+        position++;
     }
 }

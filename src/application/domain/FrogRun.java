@@ -71,5 +71,6 @@ public class FrogRun extends Thread implements Observable<FrogRun> {
 
         this.finished = true;
         System.out.println(frog + " finalizou a corrida\n");
+        dispatch();
     }
 }
